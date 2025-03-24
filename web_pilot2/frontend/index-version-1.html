@@ -1,0 +1,97 @@
+<!--
+ * File: index.html
+ * Description: Struttura principale della pagina per la dashboard interattiva del progetto SDG-Eyes.
+ * Author: Mattia Scalas
+ * Date: Dicembre 2024
+ * Usage: Punto di ingresso per il frontend dell'applicazione.
+ -->
+
+ <!DOCTYPE html>
+ <html lang="it">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SDG-Eyes | Pilot 2 (Demo) | Heat-health risk in Turin</title>
+     
+     <!-- CSS Libraries -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+ 
+     <!-- JavaScript Libraries -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+ 
+     <!-- Custom JS -->
+     <script type="module" src="js/map.js"></script>
+
+ </head>
+ <body>
+     <!-- Header: Logo, Titolo e Selettore Tabelle -->
+     <header class="bg-light p-3">
+         <div class="container-fluid">
+             <div class="row align-items-center">
+                 <!-- Logo -->
+                 <div class="col-2 d-flex justify-content-center">
+                     <div id="logos">
+                         <img src="images/logo.png" alt="SDG-Eyes logo" class="img-fluid">
+                     </div>
+                 </div>
+                 <!-- Titolo -->
+                 <div class="col-7 text-center">
+                     <h1>Heat-health risk in Turin</h1>
+                 </div>
+                 <!-- Selettore Tabelle -->
+                 <div class="col-3">
+                     <div id="tableSelectorContainer" class="text-right">
+                         <label for="scenario">Seleziona un indicatore di pericolo:</label>
+                         <select name="scenario" id="tableSelector" class="form-control">
+                             <option value="sdgeyes_tappmax_filtered">Temperatura massima apparente</option>
+                             <option value="sdgeyes_hw_filtered">Ondate di caldo</option>
+                             <option value="sdgeyes_su_filtered">Giornate estive</option>
+                             <option value="sdgeyes_tr_filtered">Notti tropicali</option>
+                         </select>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </header>
+ 
+     <!-- Main: Mappa e Contenitori Grafici -->
+     <main class="d-flex flex-grow-1">
+         <!-- Contenitore Mappa -->
+         <div id="map-container" class="flex-grow-1">
+             <div id="map"></div>
+         </div>
+         <!-- Contenitori Grafici -->
+         <div class="info-container d-flex flex-column">
+             <!-- Grafico a Torta -->
+             <div id="pieChart-container" class="chart">
+                 <canvas id="pieChart"></canvas>
+                 <div id="pieChart-placeholder" class="placeholder">
+                     Seleziona una feature sulla mappa per visualizzare i dettagli del piechart.
+                 </div>
+             </div>
+             <!-- Grafico a Barre -->
+             <div id="barChart-container" class="chart flex-grow-1">
+                 <canvas id="barChart"></canvas>
+                 <div id="barChart-placeholder" class="placeholder">
+                     Seleziona una feature sulla mappa per visualizzare i dettagli del barchart.
+                 </div>
+             </div>
+         </div>
+     </main>
+ 
+     <!-- Footer: Informazioni di Progetto -->
+     <footer class="bg-light text-center p-3">
+         <p>
+             Questa dashboard è stata sviluppata nell'ambito del Pilot 2 del progetto SDGs-Eyes e permette la visualizzazione
+             interattiva di un set di indicatori di pericolo e vulnerabilità rispetto a un campione esposto di popolazione
+             over 65 nella città di Torino. Il selettore in alto a destra permette di selezionare un indicatore di pericolo e carica il relativo rischio.
+         </p>
+     </footer>
+ </body>
+ </html>
+ 

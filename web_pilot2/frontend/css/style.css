@@ -1,0 +1,231 @@
+/**
+ * File: style.css
+ * Description: Stile personalizzato per la dashboard interattiva del progetto SDG-Eyes.
+ * Author: Mattia Scalas
+ * Date: Dicembre 2024
+ * Usage: Applicato alla struttura principale del frontend per layout e estetica.
+ */
+
+/* Reset e impostazioni generali */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Stile per l'header */
+header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#logos img {
+    width: auto;
+    height: 80%;
+    max-height: 40px;
+}
+
+h1 {
+    flex: 2;
+    text-align: center;
+    margin: 0;
+}
+
+#tableSelectorContainer {
+    flex: 1;
+    text-align: right;
+}
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Layout principale */
+main {
+    /*flex: 1;
+    display: flex;
+    /*max-height: calc(100vh - 50px);*/
+    max-height: 100vh;
+    overflow: hidden;  /*Impedisce lo scorrimento*/
+}
+
+/* Contenitore della mappa */
+#map-container {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    min-width: 50%;
+    /*overflow: hidden;*/
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Contenitore informazioni */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    gap: 5px;
+    width: 50%;
+    height:100%;
+    animation: incWidth 1s forwards;
+}
+
+/* Stile per i grafici */
+.chart {
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#pieChart-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 50%; 
+    width: 100%; 
+}
+
+#barChart-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 50%; 
+    width: 100%; 
+}
+
+@keyframes incWidth{
+    100%{width: 50%;}
+    0%{width: 0%;}
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    height: 40vh; /* Set a fixed height as needed */
+    width: 40vw; /* Set a fixed height as needed */  
+
+    align-items: center;
+    justify-content: center;
+    /*height: 100%;*/
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+
+    animation: incOpacity 0.5s forwards;
+}
+
+@keyframes incOpacity{
+    100%{opacity: 100%;}
+    0%{opacity: 0%;}
+}
+
+/* Nascondi elementi inizialmente */
+#pieChart, #barChart {
+    display: none;
+}
+
+#pieChart-placeholder,
+#barChart-placeholder {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    height: 40vh; /* Set a fixed height as needed */
+    width: 40vw; /* Set a fixed height as needed */  
+    
+    align-items: center;
+    justify-content: center;
+    /*height: 100%;*/
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+#pieChart[hidden],
+#barChart[hidden],
+#pieChart-placeholder[hidden],
+#barChart-placeholder[hidden] {
+    display: none;
+}
+
+/* Stile per il footer 
+footer {
+    flex: 0 0 auto;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+*/
+
+path.leaflet-interactive:focus {
+    outline: none;
+}
+
+.neighbourhood-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    border: none;
+    background: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.circo-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: green;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    border: none;
+    background: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.heath-district-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    border: none;
+    background: none;
+    padding: 0;
+    white-space: nowrap;
+}

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@font-face{
+    font-family: 'Futura Bold';
+    src: url('../fonts/futura/Futura Bold font.ttf');
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: 'Futura Light';
+    src: url('../fonts/futura/Futura Light font');
+}
+
+.heading-tag{
+    font-family: 'Futura Bold', Arial, Helvetica, sans-serif;
+}
+
+.sidebar-tag{
+    font-family: 'Futura Light', Arial, Helvetica, sans-serif;
+    background-color: #3e7e43;
+}
+
+.footer-tag{
+    padding: 0.5rem 0rem;
+    font-family: 'Futura Light', Arial, Helvetica, sans-serif;
+}
+
+/* For the select (drop down) input in the input field 
+.select-input{
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding: 2px;
+    width: 100%
+}
+
+.option-input{
+    border-radius: 5px;
+    padding: 2px;
+    width: 100%
+}
+*/
+
+.wrap-label {
+    display: block;
+    width: 100%; /* Adjust the width as needed */
+    white-space: normal; /* Allows the text to wrap */
+}

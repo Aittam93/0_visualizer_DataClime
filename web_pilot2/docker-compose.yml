@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: always # Rilancia il container in caso di crash
+    networks:
+      - app-network
+
+  db:
+    image: postgis/postgis:13-3.3
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db_dump:/db_dump # Aggiunge il volume per il dump
+    restart: always
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+  db_dump: # Aggiunge un volume per il dump
+
+networks:
+  app-network:
